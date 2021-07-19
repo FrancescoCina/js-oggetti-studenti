@@ -3,3 +3,17 @@ Creare un oggetto che descriva uno studente, con le seguenti proprietà: nome, c
 Stampare a schermo (in pagina) attraverso un ciclo for-in tutte le proprietà dell'oggetto.
 */
 
+var displayStudent = document.getElementById("student");
+var student = {
+    name: "Francesco",
+    surname: "Cina",
+    age: 26,
+}
+
+
+/* console.log(student.name);
+console.log(student["surname"]);
+console.log(student.age) */
+
+
+
