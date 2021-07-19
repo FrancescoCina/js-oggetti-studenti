@@ -16,4 +16,6 @@ console.log(student["surname"]);
 console.log(student.age) */
 
 
-
+for (var key in student) {
+    console.log(student[key]);
+}
