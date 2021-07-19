@@ -30,7 +30,71 @@ var students = [{
     surname: "Bianchi",
 }]
 
-console.table(students);
+
+// console.log(students[2].surname);
+
+
+
+// DEFINIZIONE OGGETTO DEL NUOVO STUDENTE
+
+var newStudent = {
+    name: "",
+    surname: "",
+    age: "",
+};
+
+
+
+// DEFINIZIONE VARIABILI PER PROMPT
+
+var userStudentName = "";
+var userStudentSurname = "";
+var userStudentAge = 0;
+
+
+
+// PROMPT + CONTROLLI
+
+// Name
+
+do {
+    userStudentName = prompt("Qual è il nome dello studente?");
+
+} while (!userStudentName || userStudentName.trim() === "");
+
+
+
+// Surname
+
+do {
+    userStudentSurname = prompt("Qual è il cognome dello studente?");
+
+} while (!userStudentSurname || userStudentSurname.trim() === "");
+
+
+// Age
+do {
+    userStudentAge = prompt("Qual è l'età dello studente?");
+
+} while (!userStudentAge || userStudentAge.trim() === "");
+
+
+
+// Inserimento dati del prompt all'interno del nuovo oggetto (newStudent)
+
+newStudent.name = userStudentName;
+newStudent.surname = userStudentSurname;
+newStudent.age = userStudentAge;
+
+console.log(newStudent);
+
+
+// INSERIMENTO NUOVO OGGETTO (newStudent) IN ARRAY (students)
+students.push(newStudent);
+console.log(students);
+
+
+
 
 // CICLO FOR..IN
 
@@ -43,6 +107,3 @@ for (var i = 0; i < students.length; i++) {
         displayStudents.innerHTML = studentInLoop;
     }
 }
-
-
-
