@@ -3,19 +3,21 @@ Creare un oggetto che descriva uno studente, con le seguenti proprietà: nome, c
 Stampare a schermo (in pagina) attraverso un ciclo for-in tutte le proprietà dell'oggetto.
 */
 
+// DEFINIZIONE ELEMENTO HTML DA PRENDERMI
+
 var displayStudent = document.getElementById("student");
+
+// CREAZIONE OGGETTO "STUDENT"
 var student = {
     name: "Francesco",
     surname: "Cina",
     age: 26,
 }
 
+// CICLO FOR...IN PER STAMPARE TUTTE LE PROPRIETA' INTERNE ALL'OGGETTO
 
-/* console.log(student.name);
-console.log(student["surname"]);
-console.log(student.age) */
-
-
+var studentElement = "";
 for (var key in student) {
-    console.log(student[key]);
+    studentElement += "<li>" + key + " " + student[key] + "</li>";
+    displayStudent.innerHTML = studentElement;
 }
