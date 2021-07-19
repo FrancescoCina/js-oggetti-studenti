@@ -12,6 +12,10 @@ Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere un nuovo
 3- creare 3 prompt che generano tre risultati ed inserirli all'interno dell'array di oggetti (creando un nuovo oggetto);
 */
 
+// Mi prendo l'elemento HTML
+var displayStudents = document.getElementById("student");
+console.log(displayStudents);
+
 
 // Creo array di oggetti studenti
 
@@ -29,3 +33,16 @@ var students = [{
 console.table(students);
 
 // CICLO FOR..IN
+
+var studentInLoop = "";
+
+for (var i = 0; i < students.length; i++) {
+    for (var key in students[i]) {
+        console.log(students[i][key]);
+        studentInLoop += "<li>" + key + " " + students[i][key] + "</li>";
+        displayStudents.innerHTML = studentInLoop;
+    }
+}
+
+
+
