@@ -33,8 +33,6 @@ var students = [{
 
 // console.log(students[2].surname);
 
-
-
 // DEFINIZIONE OGGETTO DEL NUOVO STUDENTE
 
 var newStudent = {
@@ -45,7 +43,7 @@ var newStudent = {
 
 
 
-// DEFINIZIONE VARIABILI PER PROMPT
+/* // DEFINIZIONE VARIABILI PER PROMPT
 
 var userStudentName = "";
 var userStudentSurname = "";
@@ -77,33 +75,70 @@ do {
     userStudentAge = prompt("Qual è l'età dello studente?");
 
 } while (!userStudentAge || userStudentAge.trim() === "");
+ */
 
 
 
-// Inserimento dati del prompt all'interno del nuovo oggetto (newStudent)
+// PRENDO INPUT HTML
 
-newStudent.name = userStudentName;
-newStudent.surname = userStudentSurname;
-newStudent.age = userStudentAge;
-
-console.log(newStudent);
-
-
-// INSERIMENTO NUOVO OGGETTO (newStudent) IN ARRAY (students)
-students.push(newStudent);
-console.log(students);
+var inputName = document.getElementById("name");
+var inputSurname = document.getElementById("surname");
+var inputAge = document.getElementById("age");
+var inputButton = document.getElementById("submit-button");
 
 
 
 
-// CICLO FOR..IN
 
-var studentInLoop = "";
+// Creazione evento al click del bottone
 
-for (var i = 0; i < students.length; i++) {
-    for (var key in students[i]) {
-        console.log(students[i][key]);
-        studentInLoop += "<li>" + key + " " + students[i][key] + "</li>";
-        displayStudents.innerHTML = studentInLoop;
+
+inputButton.addEventListener("click", function () {
+
+    // VARIABILI VALORI INPUT
+
+    var inputNameValue = inputName.value;
+    console.log(inputNameValue);
+
+    var inputSurnameValue = inputSurname.value;
+    console.log(inputSurnameValue);
+
+    var inputAgeValue = inputAge.value;
+    console.log(inputAgeValue);
+
+
+
+    // Inserimento dati del prompt all'interno del nuovo oggetto (newStudent)
+
+    newStudent.name = inputNameValue;
+    newStudent.surname = inputSurnameValue;
+    newStudent.age = inputAgeValue;
+
+    console.log(newStudent);
+
+
+
+
+    // INSERIMENTO NUOVO OGGETTO (newStudent) IN ARRAY (students)
+    students.push(newStudent);
+    console.log(students);
+
+    // CICLO FOR..IN
+
+    var studentInLoop = "";
+
+    for (var i = 0; i < students.length; i++) {
+        for (var key in students[i]) {
+            console.log(students[i][key]);
+            studentInLoop += "<li>" + key + ": " + students[i][key] + "</li>";
+        }
+        studentInLoop += "<li></li>";
     }
-}
+
+    displayStudents.innerHTML = studentInLoop;
+
+})
+
+
+
+

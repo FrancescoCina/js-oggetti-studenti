@@ -19,5 +19,5 @@ var student = {
 var studentElement = "";
 for (var key in student) {
     studentElement += "<li>" + key + " " + student[key] + "</li>";
-    displayStudent.innerHTML = studentElement;
 }
+displayStudent.innerHTML = studentElement;
